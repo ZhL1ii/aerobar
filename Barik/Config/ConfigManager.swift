@@ -97,11 +97,23 @@ final class ConfigManager: ObservableObject {
             # calendar.allow-list = ["Home", "Personal"] # show only these calendars
             # calendar.deny-list = ["Work", "Boss"] # show all calendars except these
 
-            [popup.default.time]
+            [widgets.default.time.popup]
             view-variant = "box"
             
-            [background]
-            enabled = true
+            ### EXPERIMENTAL, WILL BE REPLACED BY STYLE API IN THE FUTURE
+            [experimental.background]
+            displayed = false
+            height = "menu-bar"
+            blur = 3
+
+            [experimental.foreground]
+            height = "menu-bar"
+            horizontal-padding = 25
+            spacing = 15
+
+            [experimental.foreground.widgets-background]
+            displayed = false
+            blur = 3
             """
         try defaultTOML.write(toFile: path, atomically: true, encoding: .utf8)
     }

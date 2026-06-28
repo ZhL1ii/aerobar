@@ -120,12 +120,12 @@ view-variant = "box"
 
 ### EXPERIMENTAL, WILL BE REPLACED BY STYLE API IN THE FUTURE
 [experimental.background] # settings for blurred background
-displayed = true          # display blurred background
-height = "default"        # available values: default (stretch to full screen), menu-bar (height like system menu bar), <float> (e.g., 40, 33.5)
+displayed = false         # display blurred background
+height = "menu-bar"       # available values: default (stretch to full screen), menu-bar (height like system menu bar), <float> (e.g., 40, 33.5)
 blur = 3                  # background type: from 1 to 6 for blur intensity, 7 for black color
 
 [experimental.foreground] # settings for menu bar
-height = "default"        # available values: default (55.0), menu-bar (height like system menu bar), <float> (e.g., 40, 33.5)
+height = "menu-bar"       # available values: default (55.0), menu-bar (height like system menu bar), <float> (e.g., 40, 33.5)
 horizontal-padding = 25   # padding on the left and right corners
 spacing = 15              # spacing between widgets
 
