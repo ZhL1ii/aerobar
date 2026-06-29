@@ -1,33 +1,32 @@
-**NOTICE**: Unfortunately, I don’t have much free time to actively maintain this project. If you like the project but are not satisfied with its current state, you can explore the many forks or create your own. Even if you’re unfamiliar with **Swift**, tools like **Claude Code** and **Codex** can effectively help implement projects like this. This is a great opportunity to tailor **barik** to your needs and make it exactly the way you’d like.
+**AeroBar** is a maintained fork of [**barik**](https://github.com/mocki-toki/barik), originally created by [**Simon Butenko**](https://github.com/mocki-toki). The upstream project has been quiet for a while, so this fork exists to fix long-standing issues, keep the project usable, and continue improving the macOS menu bar experience.
 
 ----
 
 <p align="center" dir="auto">
-  <img src="resources/header-image.png" alt="Barik"">
+  <img src="resources/header-image.png" alt="AeroBar">
   <p align="center" dir="auto">
     <a href="LICENSE">
-      <img alt="License Badge" src="https://img.shields.io/github/license/mocki-toki/barik.svg?color=green" style="max-width: 100%;">
-    </a>
-    <a href="https://github.com/mocki-toki/barik/issues">
-      <img alt="Issues Badge" src="https://img.shields.io/github/issues/mocki-toki/barik.svg?color=green" style="max-width: 100%;">
+      <img alt="License Badge" src="https://img.shields.io/badge/license-MIT-green.svg" style="max-width: 100%;">
     </a>
     <a href="CHANGELOG.md">
       <img alt="Changelog Badge" src="https://img.shields.io/badge/view-changelog-green.svg" style="max-width: 100%;">
     </a>
-    <a href="https://github.com/mocki-toki/barik/releases">
-      <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/mocki-toki/barik/total">
+    <a href="https://github.com/mocki-toki/barik">
+      <img alt="Upstream Badge" src="https://img.shields.io/badge/upstream-barik-green.svg" style="max-width: 100%;">
     </a>
   </p>
 </p>
 
-**barik** is a lightweight macOS menu bar replacement. If you use [**yabai**](https://github.com/koekeishiya/yabai) or [**AeroSpace**](https://github.com/nikitabobko/AeroSpace) for tiling WM, you can display the current space in a sleek macOS-style panel with smooth animations. This makes it easy to see which number to press to switch spaces.
+**AeroBar** is a lightweight macOS menu bar replacement based on **barik**. If you use [**yabai**](https://github.com/koekeishiya/yabai) or [**AeroSpace**](https://github.com/nikitabobko/AeroSpace) for tiling WM, you can display the current space in a sleek macOS-style panel with smooth animations. This makes it easy to see which number to press to switch spaces.
+
+This fork will stay close to the original idea while improving stability, configuration, update behavior, and day-to-day usability.
 
 <br>
 
 <div align="center">
   <h3>Screenshots</h3>
-  <img src="resources/preview-image-light.png" alt="Barik Light Theme">
-  <img src="resources/preview-image-dark.png" alt="Barik Dark Theme">
+  <img src="resources/preview-image-light.png" alt="AeroBar Light Theme">
+  <img src="resources/preview-image-dark.png" alt="AeroBar Dark Theme">
 </div>
 <br>
 <div align="center">
@@ -45,27 +44,21 @@ https://github.com/user-attachments/assets/d3799e24-c077-4c6a-a7da-a1f2eee1a07f
 
 ## Quick Start
 
-1. Install **barik** via [Homebrew](https://brew.sh/)
+1. Download the latest build from this repository's Releases page, unzip it, and move it to your Applications folder.
 
-```sh
-brew install --cask mocki-toki/formulae/barik
-```
-
-Or you can download from [Releases](https://github.com/mocki-toki/barik/releases), unzip it, and move it to your Applications folder.
-
-2. _(Optional)_ To display open applications and spaces, install [**yabai**](https://github.com/koekeishiya/yabai) or [**AeroSpace**](https://github.com/nikitabobko/AeroSpace) and set up hotkeys. For **yabai**, you'll need **skhd** or **Raycast scripts**. Don't forget to configure **top padding** — [here's an example for **yabai**](https://github.com/mocki-toki/barik/blob/main/example/.yabairc).
+2. _(Optional)_ To display open applications and spaces, install [**yabai**](https://github.com/koekeishiya/yabai) or [**AeroSpace**](https://github.com/nikitabobko/AeroSpace) and set up hotkeys. For **yabai**, you'll need **skhd** or **Raycast scripts**. Don't forget to configure **top padding** — [here's an example for **yabai**](example/.yabairc).
 
 3. Hide the system menu bar in **System Settings** and uncheck **Desktop & Dock → Show items → On Desktop**.
 
-4. Launch **barik** from the Applications folder.
+4. Launch **AeroBar** from the Applications folder.
 
-5. Add **barik** to your login items for automatic startup.
+5. Add **AeroBar** to your login items for automatic startup.
 
 **That's it!** Try switching spaces and see the panel in action.
 
 ## Configuration
 
-When you launch **barik** for the first time, it will create a `~/.barik-config.toml` file with an example customization for your new menu bar.
+When you launch **AeroBar** for the first time, it will create a config file with an example customization for your new menu bar. The project is still in a rename transition, so current builds may still use the original `~/.barik-config.toml` path.
 
 ```toml
 # If you installed yabai or aerospace without using Homebrew,
@@ -134,13 +127,13 @@ displayed = false                            # wrap widgets in their own backgro
 blur = 3                                     # background type: from 1 to 6 for blur intensity
 ```
 
-Currently, you can customize the order of widgets (time, indicators, etc.) and adjust some of their settings. Soon, you’ll also be able to add custom widgets and completely change **barik**'s appearance—making it almost unrecognizable (hello, r/unixporn!).
+Currently, you can customize the order of widgets (time, indicators, etc.) and adjust some of their settings. Future versions will continue expanding appearance customization, widget behavior, and integration quality.
 
 ## Future Plans
 
-I'm not planning to stick to minimal functionality—exciting new features are coming soon! The roadmap includes full style customization, the ability to create custom widgets or extend existing ones, and a public **Store** where you can share your styles and widgets.
+This fork will focus first on reliability, project identity cleanup, and a smoother configuration experience. After that, the roadmap includes full style customization, the ability to create custom widgets or extend existing ones, and better support for sharing styles and widgets.
 
-Soon, you'll also be able to place widgets not just at the top, but at the bottom, left, and right as well. This means you can replace not only the menu bar but also the Dock! 🚀
+Longer term, widgets should be flexible enough to live beyond the top menu bar, including bottom, left, and right screen edges.
 
 ## What to do if the currently playing song is not displayed in the Now Playing widget?
 
@@ -149,11 +142,11 @@ Unfortunately, macOS does not support access to its API that allows music contro
 1. Spotify (requires the desktop application)
 2. Apple Music (requires the desktop application)
 
-Create an issue so we can add your favorite music service: https://github.com/mocki-toki/barik/issues/new
+Create an issue so we can consider adding your favorite music service.
 
 ## Where Are the Menu Items?
 
-[#5](https://github.com/mocki-toki/barik/issues/5), [#1](https://github.com/mocki-toki/barik/issues/1)
+Originally tracked upstream in [#5](https://github.com/mocki-toki/barik/issues/5) and [#1](https://github.com/mocki-toki/barik/issues/1).
 
 Menu items (such as File, Edit, View, etc.) are not currently supported, but they are planned for future releases. However, you can use [Raycast](https://www.raycast.com/), which supports menu items through an interface similar to Spotlight. I personally use it with the `option + tab` shortcut, and it works very well.
 
@@ -163,16 +156,18 @@ If you’re accustomed to using menu items from the system menu bar, simply move
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a PR.
+Contributions are welcome. This fork is intended to keep the original idea moving forward while giving proper credit to the upstream project.
 
 ## License
 
 [MIT](LICENSE)
 
+This project is based on [**barik**](https://github.com/mocki-toki/barik) by [**Simon Butenko**](https://github.com/mocki-toki). See [LICENSE](LICENSE) for the original MIT license notice.
+
 ## Trademarks
 
 Apple and macOS are trademarks of Apple Inc. This project is not connected to Apple Inc. and does not have their approval or support.
 
-## Stars
+## Upstream
 
-[![Stargazers over time](https://starchart.cc/mocki-toki/barik.svg?variant=adaptive)](https://starchart.cc/mocki-toki/barik)
+Original project: [mocki-toki/barik](https://github.com/mocki-toki/barik)
