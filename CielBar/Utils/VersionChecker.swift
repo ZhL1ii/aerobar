@@ -1,7 +1,7 @@
 import Foundation
 
 struct VersionChecker {
-    private static let versionFileName = "current_barik_version"
+    private static let versionFileName = "current_cielbar_version"
     
     static var currentVersion: String? {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
@@ -12,8 +12,8 @@ struct VersionChecker {
             return nil
         }
         
-        let barikFolder = appSupport.appendingPathComponent("barik")
-        return barikFolder.appendingPathComponent(versionFileName)
+        let cielBarFolder = appSupport.appendingPathComponent("cielbar")
+        return cielBarFolder.appendingPathComponent(versionFileName)
     }
     
     static func isLatestVersion() -> Bool {

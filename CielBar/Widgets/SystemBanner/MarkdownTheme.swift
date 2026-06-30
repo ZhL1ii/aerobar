@@ -2,7 +2,7 @@ import MarkdownUI
 import SwiftUI
 
 extension Theme {
-    static let barik = Theme()
+    static let cielbar = Theme()
         .text {
             ForegroundColor(.white.opacity(0.8))
             BackgroundColor(.clear)

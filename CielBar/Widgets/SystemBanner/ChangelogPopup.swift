@@ -21,7 +21,7 @@ struct ChangelogPopup: View {
                     .padding(.horizontal, 5)
                     .padding(.vertical, 20)
                     .padding(.trailing, 15)
-                    .markdownTheme(.barik)
+                    .markdownTheme(.cielbar)
                     .foregroundStyle(.white)
             }.offset(x: 15)
                 .markdownImageProvider(WebImageProvider())
@@ -39,7 +39,7 @@ struct ChangelogPopup: View {
         guard
             let url = URL(
                 string:
-                    "https://raw.githubusercontent.com/mocki-toki/barik/main/CHANGELOG.md"
+                    "https://raw.githubusercontent.com/ZhL1ii/cielbar/main/CHANGELOG.md"
             )
         else {
             return

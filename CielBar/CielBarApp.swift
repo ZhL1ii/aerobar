@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct BarikApp: App {
+struct CielBarApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

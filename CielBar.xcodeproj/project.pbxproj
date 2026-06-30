@@ -12,26 +12,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C10E2F8A2D41235900AC957C /* Barik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10E2F8A2D41235900AC957C /* CielBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CielBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C1BB4B422D526B5C00A1F46E /* Exceptions for "Barik" folder in "Barik" target */ = {
+		C1BB4B422D526B5C00A1F46E /* Exceptions for "CielBar" folder in "CielBar" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = C10E2F892D41235900AC957C /* Barik */;
+			target = C10E2F892D41235900AC957C /* CielBar */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C1BB4B332D526B5C00A1F46E /* Barik */ = {
+		C1BB4B332D526B5C00A1F46E /* CielBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C1BB4B422D526B5C00A1F46E /* Exceptions for "Barik" folder in "Barik" target */,
+				C1BB4B422D526B5C00A1F46E /* Exceptions for "CielBar" folder in "CielBar" target */,
 			);
-			path = Barik;
+			path = CielBar;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -53,14 +53,14 @@
 			isa = PBXGroup;
 			children = (
 				C10E2F8B2D41235900AC957C /* Products */,
-				C1BB4B332D526B5C00A1F46E /* Barik */,
+				C1BB4B332D526B5C00A1F46E /* CielBar */,
 			);
 			sourceTree = "<group>";
 		};
 		C10E2F8B2D41235900AC957C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C10E2F8A2D41235900AC957C /* Barik.app */,
+				C10E2F8A2D41235900AC957C /* CielBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,9 +68,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C10E2F892D41235900AC957C /* Barik */ = {
+		C10E2F892D41235900AC957C /* CielBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C10E2FAF2D41235B00AC957C /* Build configuration list for PBXNativeTarget "Barik" */;
+			buildConfigurationList = C10E2FAF2D41235B00AC957C /* Build configuration list for PBXNativeTarget "CielBar" */;
 			buildPhases = (
 				C10E2F862D41235900AC957C /* Sources */,
 				C10E2F872D41235900AC957C /* Frameworks */,
@@ -81,15 +81,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				C1BB4B332D526B5C00A1F46E /* Barik */,
+				C1BB4B332D526B5C00A1F46E /* CielBar */,
 			);
-			name = Barik;
+			name = CielBar;
 			packageProductDependencies = (
 				F66C98C42D60E35600C3C53C /* TOMLDecoder */,
 				F6B514032D6C5F3400DFEB43 /* MarkdownUI */,
 			);
-			productName = Barik;
-			productReference = C10E2F8A2D41235900AC957C /* Barik.app */;
+			productName = CielBar;
+			productReference = C10E2F8A2D41235900AC957C /* CielBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C10E2F852D41235900AC957C /* Build configuration list for PBXProject "Barik" */;
+			buildConfigurationList = C10E2F852D41235900AC957C /* Build configuration list for PBXProject "CielBar" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C10E2F892D41235900AC957C /* Barik */,
+				C10E2F892D41235900AC957C /* CielBar */,
 			);
 		};
 /* End PBXProject section */
@@ -294,7 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Barik/Barik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CielBar/CielBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
@@ -303,12 +303,12 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Barik/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Barik;
+				INFOPLIST_FILE = CielBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CielBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need this permission for control of third-party media players via an interactive widget";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need this permission for displaying calendar events";
-				INFOPLIST_KEY_NSHumanReadableCopyright = Pansy;
+				INFOPLIST_KEY_NSHumanReadableCopyright = ZhL1ii;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location permission for display WiFi network name";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,7 +316,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 0.5.1;
-				PRODUCT_BUNDLE_IDENTIFIER = Pansy.Barik;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.zhl1ii.cielbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,7 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Barik/Barik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CielBar/CielBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
@@ -337,12 +337,12 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Barik/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Barik;
+				INFOPLIST_FILE = CielBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CielBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need this permission for control of third-party media players via an interactive widget";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "We need this permission for displaying calendar events";
-				INFOPLIST_KEY_NSHumanReadableCopyright = Pansy;
+				INFOPLIST_KEY_NSHumanReadableCopyright = ZhL1ii;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location permission for display WiFi network name";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,7 +350,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 0.5.1;
-				PRODUCT_BUNDLE_IDENTIFIER = Pansy.Barik;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.zhl1ii.cielbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -360,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C10E2F852D41235900AC957C /* Build configuration list for PBXProject "Barik" */ = {
+		C10E2F852D41235900AC957C /* Build configuration list for PBXProject "CielBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C10E2FAD2D41235B00AC957C /* Debug */,
@@ -369,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C10E2FAF2D41235B00AC957C /* Build configuration list for PBXNativeTarget "Barik" */ = {
+		C10E2FAF2D41235B00AC957C /* Build configuration list for PBXNativeTarget "CielBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C10E2FB02D41235B00AC957C /* Debug */,

@@ -18,18 +18,33 @@ final class ConfigManager: ObservableObject {
 
     private func loadOrCreateConfigIfNeeded() {
         let homePath = FileManager.default.homeDirectoryForCurrentUser.path
-        let path1 = "\(homePath)/.barik-config.toml"
-        let path2 = "\(homePath)/.config/barik/config.toml"
+        let primaryPath = "\(homePath)/.cielbar-config.toml"
+        let xdgPath = "\(homePath)/.config/cielbar/config.toml"
+        let legacyPaths = [
+            "\(homePath)/.barik-config.toml",
+            "\(homePath)/.config/barik/config.toml"
+        ]
         var chosenPath: String?
 
-        if FileManager.default.fileExists(atPath: path1) {
-            chosenPath = path1
-        } else if FileManager.default.fileExists(atPath: path2) {
-            chosenPath = path2
+        if FileManager.default.fileExists(atPath: primaryPath) {
+            chosenPath = primaryPath
+        } else if FileManager.default.fileExists(atPath: xdgPath) {
+            chosenPath = xdgPath
+        } else if let legacyPath = legacyPaths.first(where: {
+            FileManager.default.fileExists(atPath: $0)
+        }) {
+            do {
+                try copyConfig(from: legacyPath, to: primaryPath)
+                chosenPath = primaryPath
+            } catch {
+                initError = "Error importing legacy config: \(error.localizedDescription)"
+                print("Error when importing legacy config:", error)
+                return
+            }
         } else {
             do {
-                try createDefaultConfig(at: path1)
-                chosenPath = path1
+                try createDefaultConfig(at: primaryPath)
+                chosenPath = primaryPath
             } catch {
                 initError = "Error creating default config: \(error.localizedDescription)"
                 print("Error when creating default config:", error)
@@ -42,6 +57,15 @@ final class ConfigManager: ObservableObject {
             parseConfigFile(at: path)
             startWatchingFile(at: path)
         }
+    }
+
+    private func copyConfig(from sourcePath: String, to destinationPath: String) throws {
+        let destinationURL = URL(fileURLWithPath: destinationPath)
+        try FileManager.default.createDirectory(
+            at: destinationURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true,
+            attributes: nil)
+        try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
     }
 
     private func parseConfigFile(at path: String) {

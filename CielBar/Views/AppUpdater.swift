@@ -1,6 +1,12 @@
 import Foundation
 
 final class AppUpdater: ObservableObject {
+    private enum Release {
+        static let repository = "ZhL1ii/cielbar"
+        static let appBundleName = "CielBar.app"
+        static let assetNamePrefix = "cielbar"
+    }
+
     // Published properties to notify the UI
     @Published var latestVersion: String?
     @Published var updateAvailable = false
@@ -32,7 +38,7 @@ final class AppUpdater: ObservableObject {
         let versionWithoutPrefix =
             version.hasPrefix("v") ? String(version.dropFirst()) : version
         let urlString =
-            "https://github.com/mocki-toki/barik/releases/download/\(version)/barik-v\(versionWithoutPrefix).zip"
+            "https://github.com/\(Release.repository)/releases/download/\(version)/\(Release.assetNamePrefix)-v\(versionWithoutPrefix).zip"
         return URL(string: urlString)
     }
 
@@ -41,7 +47,7 @@ final class AppUpdater: ObservableObject {
         guard
             let url = URL(
                 string:
-                    "https://api.github.com/repos/mocki-toki/barik/releases/latest"
+                    "https://api.github.com/repos/\(Release.repository)/releases/latest"
             )
         else { return }
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
@@ -154,13 +160,13 @@ final class AppUpdater: ObservableObject {
                 try unzipProcess.run()
                 unzipProcess.waitUntilExit()
 
-                let newAppURL = tempDir.appendingPathComponent("Barik.app")
+                let newAppURL = tempDir.appendingPathComponent(Release.appBundleName)
                 if fileManager.fileExists(atPath: newAppURL.path) {
                     DispatchQueue.main.async {
                         completion(tempDir)
                     }
                 } else {
-                    print("Unzipping failed: Barik.app not found in archive")
+                    print("Unzipping failed: \(Release.appBundleName) not found in archive")
                     DispatchQueue.main.async {
                         completion(nil)
                     }
@@ -203,8 +209,8 @@ final class AppUpdater: ObservableObject {
             return
         }
         let newAppURL = URL(fileURLWithPath: downloadedPath)
-            .appendingPathComponent("Barik.app")
-        let destinationURL = URL(fileURLWithPath: "/Applications/Barik.app")
+            .appendingPathComponent(Release.appBundleName)
+        let destinationURL = URL(fileURLWithPath: "/Applications/\(Release.appBundleName)")
         let script = """
             #!/bin/bash
             sleep 2
