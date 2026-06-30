@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+This is the first CielBar identity cleanup after forking from barik. Historical barik release notes are preserved below for attribution and upgrade context.
+
+- Renamed the app, Xcode project, scheme, target, and install bundle to CielBar.
+- Changed the bundle identifier to `io.github.zhl1ii.cielbar`.
+- Changed the default config path to `~/.cielbar-config.toml`.
+- Added one-time import from legacy barik config paths when no CielBar config exists.
+- Redirected update and changelog lookups to the CielBar repository.
+
 ## 0.5.1
 
 > This release was supported by **ALinuxPerson** _(help with the appearance configuration, 1 issue)_, **bake** _(1 issue)_ and **Oery** _(1 issue)_
