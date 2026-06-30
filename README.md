@@ -9,8 +9,11 @@
     <a href="CHANGELOG.md">
       <img alt="Changelog Badge" src="https://img.shields.io/badge/view-changelog-green.svg" style="max-width: 100%;">
     </a>
-    <a href="https://github.com/mocki-toki/barik">
-      <img alt="Upstream Badge" src="https://img.shields.io/badge/upstream-barik-green.svg" style="max-width: 100%;">
+    <a href="https://github.com/ZhL1ii/cielbar/releases">
+      <img alt="Releases Badge" src="https://img.shields.io/badge/download-releases-green.svg" style="max-width: 100%;">
+    </a>
+    <a href="https://github.com/ZhL1ii/cielbar/issues">
+      <img alt="Issues Badge" src="https://img.shields.io/badge/issues-welcome-green.svg" style="max-width: 100%;">
     </a>
   </p>
 </p>
