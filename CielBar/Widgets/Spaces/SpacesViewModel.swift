@@ -4,8 +4,14 @@ import Foundation
 
 class SpacesViewModel: ObservableObject {
     @Published var spaces: [AnySpace] = []
-    private var timer: Timer?
     private var provider: AnySpacesProvider?
+    private lazy var refreshScheduler = SpacesRefreshScheduler(
+        snapshotLoader: { [weak self] in
+            self?.loadSpacesSnapshot() ?? []
+        },
+        publishHandler: { [weak self] spaces in
+            self?.spaces = spaces
+        })
 
     init() {
         let runningApps = NSWorkspace.shared.runningApplications.compactMap {
@@ -26,45 +32,46 @@ class SpacesViewModel: ObservableObject {
     }
 
     private func startMonitoring() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {
-            [weak self] _ in
-            self?.loadSpaces()
-        }
-        loadSpaces()
+        requestRefresh(reason: "initial")
     }
 
     private func stopMonitoring() {
-        timer?.invalidate()
-        timer = nil
+        refreshScheduler.stop()
     }
 
-    private func loadSpaces() {
-        DispatchQueue.global(qos: .background).async {
-            guard let provider = self.provider,
-                let spaces = provider.getSpacesWithWindows()
-            else {
-                DispatchQueue.main.async {
-                    self.spaces = []
-                }
-                return
-            }
-            let sortedSpaces = spaces.sorted { $0.id < $1.id }
-            DispatchQueue.main.async {
-                self.spaces = sortedSpaces
-            }
+    func requestRefresh(reason: String) {
+        refreshScheduler.requestRefresh(reason: reason)
+    }
+
+    private func loadSpacesSnapshot() -> [AnySpace] {
+        guard let provider,
+            let spaces = provider.getSpacesWithWindows()
+        else {
+            return []
         }
+        return spaces.sorted { $0.id < $1.id }
     }
 
     func switchToSpace(_ space: AnySpace, needWindowFocus: Bool = false) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.provider?.focusSpace(
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.provider?.focusSpace(
                 spaceId: space.id, needWindowFocus: needWindowFocus)
+            self?.requestRefresh(reason: "focus-space")
+
+            if needWindowFocus {
+                DispatchQueue.global(qos: .userInitiated).asyncAfter(
+                    deadline: .now() + 0.2
+                ) { [weak self] in
+                    self?.requestRefresh(reason: "focus-space-window")
+                }
+            }
         }
     }
 
     func switchToWindow(_ window: AnyWindow) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.provider?.focusWindow(windowId: String(window.id))
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.provider?.focusWindow(windowId: String(window.id))
+            self?.requestRefresh(reason: "focus-window")
         }
     }
 }
